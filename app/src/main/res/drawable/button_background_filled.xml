@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- 버튼의 배경색 (디자인에 맞는 파란/보라 계열 색상) -->
+    <solid android:color="#00AFFF" />
+
+    <!-- 버튼의 모서리를 둥글게 만듭니다. 값을 조절하여 둥근 정도를 변경할 수 있습니다. -->
+    <corners android:radius="30dp" />
+
+</shape>
