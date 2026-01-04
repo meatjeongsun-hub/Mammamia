@@ -1,30 +1,26 @@
 package com.example.mammamia;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.splashscreen.SplashScreen; // import 추가
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
-import com.example.mammamia.databinding.ActivityLoginBinding; // 패키지명 확인
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private ActivityLoginBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // !! 중요 !! : setContentView() 보다 반드시 먼저 호출되어야 합니다.
-        SplashScreen.installSplashScreen(this);
-
         super.onCreate(savedInstanceState);
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_login);
 
-        // ... 기존 로그인 버튼 리스너 등 나머지 코드는 동일 ...
-        binding.btnLogin.setOnClickListener(v -> {
-            // ...
+        Button loginbtn = findViewById(R.id.btn_login);
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- 인터넷 권한 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 위치 정보 권한 (정확한 위치, 대략적인 위치) -->
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mammamia">
+    <!-- [권한 설정] -->
+    <!-- 위치 권한: 길찾기, 엇갈림 방지, 위험지역 감지 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 소리 및 알림 권한: 강제 알림 기능 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 인터넷 권한: 지도 데이터 로딩 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,17 +21,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Base.Theme.Mammamia"
+        android:theme="@style/Theme.Mammamia"
         tools:targetApi="31">
 
-        <!-- (수정) Google Maps API 키는 application 태그 안에 있어야 합니다. -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
-
-        <!-- 다른 액티비티들 -->
         <activity
-            android:name=".activity_notifications"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity_danger_zone"
@@ -35,22 +34,32 @@
             android:name=".activity_directions"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_notifications"
             android:exported="false" />
-
-        <!-- (수정) login 액티비티를 시작 액티비티로 변경하고 스플래시 테마를 적용합니다. -->
+        <activity
+            android:name=".DangerZoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DirectionActivity"
+            android:exported="false" />
         <activity
             android:name=".login"
-            android:exported="true"
-            android:theme="@style/Theme.App.Starting"> <!-- 스플래시 테마 적용 -->
+            android:exported="false" />
+        <activity
+            android:name=".MapViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-
-        <!-- (삭제) SplashActivity는 더 이상 필요 없으므로 삭제했습니다. -->
-
     </application>
 
 </manifest>

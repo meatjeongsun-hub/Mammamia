@@ -71,12 +71,12 @@
         android:layout_height="55dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/shape_button_blue"
-        android:text="                          로그인"
+        android:text="                          로그인                            "
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/et_password"
+        app:layout_constraintEnd_toEndOf="@id/et_password"
         app:layout_constraintStart_toStartOf="@id/et_password"
-        app:layout_constraintEnd_toEndOf="@id/et_password" />
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
 
     <!-- 가입하기 버튼 -->
     <androidx.appcompat.widget.AppCompatButton
@@ -85,11 +85,11 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/shape_button_dark"
-        android:text="                          가입하기"
+        android:text="                          가입하기                            "
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="@id/btn_login"
         app:layout_constraintStart_toStartOf="@id/btn_login"
-        app:layout_constraintEnd_toEndOf="@id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,14 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Top-level build file
 plugins {
-alias(libs.plugins.android.application) apply false
+    // 1. 안드로이드 애플리케이션
+    id 'com.android.application' version '8.1.0' apply false
+
+    // 2. 라이브러리
+    id 'com.android.library' version '8.1.0' apply false
+
+    // 3. 파이어베이스
+    id 'com.google.gms.google-services' version '4.3.15' apply false
+
+    // [핵심] 코틀린 플러그인 버전을 하나로 고정하여 중복 오류 해결
+    id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
 }
