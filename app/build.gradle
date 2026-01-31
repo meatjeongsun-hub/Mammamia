@@ -1,15 +1,13 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    // id 'com.google.gms.google-services' // google-services.json 파일 있으면 주석 해제
 }
 
 android {
-    namespace 'com.example.mammamia' // [주의] 본인 패키지명 확인!
+    namespace 'com.example.mammamia'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.mammamia" // [주의] 본인 패키지명 확인!
+        applicationId "com.example.mammamia"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -28,32 +26,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
 }
 
 dependencies {
-    // [중요] 스플래시 화면 오류 해결을 위한 필수 라이브러리
-    implementation 'androidx.core:core-splashscreen:1.0.1'
-
-    // 코틀린 표준 라이브러리 (중복 오류 방지용)
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
-
-    // 기본 안드로이드 라이브러리
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.activity:activity:1.8.0'
 
-    // 지도 및 위치
-    implementation 'com.google.android.gms:play-services-maps:18.1.0'
-    implementation 'com.google.android.gms:play-services-location:21.0.1'
-
-    // 파이어베이스
-    implementation platform('com.google.firebase:firebase-bom:32.2.0')
-    implementation 'com.google.firebase:firebase-messaging'
-    implementation 'com.google.firebase:firebase-analytics'
+    // 네이버 지도 SDK
+    implementation 'com.naver.maps:map-sdk:3.17.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

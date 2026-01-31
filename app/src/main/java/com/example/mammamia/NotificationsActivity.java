@@ -40,7 +40,7 @@ public class NotificationActivity extends AppCompatActivity {
         // 테스트용: 길찾기 화면으로 이동 버튼
         Button btnGoDirection = findViewById(R.id.btn_go_direction);
         btnGoDirection.setOnClickListener(v -> {
-            Intent intent = new Intent(NotificationActivity.this, DirectionActivity.class);
+            Intent intent = new Intent(NotificationActivity.this, DirectionsActivity.class);
             startActivity(intent);
         });
 

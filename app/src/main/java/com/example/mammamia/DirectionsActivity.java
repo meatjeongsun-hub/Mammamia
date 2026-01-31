@@ -17,7 +17,7 @@ import com.naver.maps.map.util.MarkerIcons;
 
 import java.util.Arrays;
 
-public class DirectionActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DirectionsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

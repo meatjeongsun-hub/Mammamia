@@ -1,28 +1,22 @@
 pluginManagement {
     repositories {
-        google()
+        google {
+        content {
+            includeGroupByRegex("com\\.android.*")
+            includeGroupByRegex("com\\.google.*")
+            includeGroupByRegex("androidx.*")
+        }
+    }
         mavenCentral()
         gradlePluginPortal()
     }
 }
-
 dependencyResolutionManagement {
-    // 프로젝트의 모든 저장소를 여기서 통합 관리합니다.
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-
     repositories {
         google()
         mavenCentral()
-
-        // [네이버 지도 저장소] 아까 build.gradle에서 지운 내용을 여기다 적어야 합니다.
-        maven {
-            url 'https://repository.map.naver.com/archive/maven'
-        }
-
-        // (필요시) 카카오 저장소 등
-        // maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
 }
-
-rootProject.name = "Mammamia" // 프로젝트 이름
+rootProject.name = "Mammamia"
 include ':app'

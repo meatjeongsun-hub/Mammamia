@@ -1,95 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".LoginActivity">
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/white">
 
-    <!-- 상단 파란색 배경 Shape -->
-    <View
-        android:id="@+id/view_top_background"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_top_background"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <View android:id="@+id/header_bg" android:layout_width="match_parent" android:layout_height="300dp"
+        android:background="@drawable/bg_login_header" app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- '로그인' 타이틀 -->
-    <TextView
-        android:id="@+id/tv_login_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="로그인"
-        android:textColor="@android:color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.4"
-        app:layout_constraintTop_toTopOf="@id/view_top_background"
-        app:layout_constraintBottom_toBottomOf="@id/view_top_background"
-        app:layout_constraintStart_toStartOf="@id/view_top_background"
-        app:layout_constraintEnd_toEndOf="@id/view_top_background" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="로그인" android:textSize="40sp" android:textColor="@color/white" android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/header_bg" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/header_bg" />
 
-    <!-- 아이디 입력란 -->
-    <EditText
-        android:id="@+id/et_id"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="60dp"
-        android:hint="아이디"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:background="@drawable/shape_edittext_background"
-        app:layout_constraintTop_toBottomOf="@id/view_top_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <EditText android:id="@+id/et_id" android:layout_width="0dp" android:layout_height="50dp"
+        android:hint="아이디" android:padding="10dp" android:background="@drawable/bg_edittext"
+        android:layout_marginTop="50dp" android:layout_marginHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/header_bg" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- 비밀번호 입력란 -->
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:background="@drawable/shape_edittext_background"
-        app:layout_constraintTop_toBottomOf="@id/et_id"
-        app:layout_constraintStart_toStartOf="@id/et_id"
-        app:layout_constraintEnd_toEndOf="@id/et_id" />
+    <EditText android:id="@+id/et_pw" android:layout_width="0dp" android:layout_height="50dp"
+        android:hint="비밀번호" android:inputType="textPassword" android:padding="10dp" android:background="@drawable/bg_edittext"
+        android:layout_marginTop="20dp" android:layout_marginHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/et_id" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- 로그인 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/shape_button_blue"
-        android:text="                          로그인                            "
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@id/et_password"
-        app:layout_constraintStart_toStartOf="@id/et_password"
-        app:layout_constraintTop_toBottomOf="@id/et_password" />
-
-    <!-- 가입하기 버튼 -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_register"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/shape_button_dark"
-        android:text="                          가입하기                            "
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@id/btn_login"
-        app:layout_constraintStart_toStartOf="@id/btn_login"
-        app:layout_constraintTop_toBottomOf="@id/btn_login" />
-
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_login" android:layout_width="0dp" android:layout_height="50dp"
+        android:text="로그인" android:textColor="@color/white" android:background="@drawable/bg_button_blue"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/et_pw" app:layout_constraintStart_toStartOf="@id/et_pw" app:layout_constraintEnd_toEndOf="@id/et_pw"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
